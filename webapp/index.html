@@ -18,10 +18,12 @@
 	<script>
 		sap.ui.getCore().attachInit(function () {
 			// The helper method sap.ui.core.ComponentContainer instantiates the component by searching for a Component.js file in the namespace that is passed in as an argument. 
-			new sap.ui.core.ComponentContainer({
-               name : "sap.ui.demo.wt"
+			new sap.m.Shell({
+               app : new sap.ui.core.ComponentContainer({
+                  name : "sap.ui.demo.wt",
+                  height : "100%"
+               })
             }).placeAt("content");
-
 			// sap.ui.xmlview({
    //             viewName : "sap.ui.demo.wt.view.App"
    //          }).placeAt("content");
