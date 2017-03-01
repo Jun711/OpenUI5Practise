@@ -12,25 +12,27 @@ sap.ui.define([
          // show message
          MessageToast.show(sMsg);
       },
-      
       onOpenDialog : function () {
-         var oView = this.getView();
-         var oDialog = oView.byId("helloDialog");
-         // create dialog lazily
-         if (!oDialog) {
-            // create dialog via fragment factory
-            // 1st arg: The ID of the HelloPanel view
-            // 2nd arg: The path of the fragment definition
-            oDialog = sap.ui.xmlfragment(oView.getId(), "sap.ui.demo.wt.view.HelloDialog", this);
-            oView.addDependent(oDialog);
-         }
-
-
-         oDialog.open();
-      },
-
-      onCloseDialog : function () {
-         this.getView().byId("helloDialog").close();
+         this.getOwnerComponent().openHelloDialog();
       }
+      // onOpenDialog : function () {
+      //    var oView = this.getView();
+      //    var oDialog = oView.byId("helloDialog");
+      //    // create dialog lazily
+      //    if (!oDialog) {
+      //       // create dialog via fragment factory
+      //       // 1st arg: The ID of the HelloPanel view
+      //       // 2nd arg: The path of the fragment definition
+      //       oDialog = sap.ui.xmlfragment(oView.getId(), "sap.ui.demo.wt.view.HelloDialog", this);
+      //       oView.addDependent(oDialog);
+      //    }
+
+
+      //    oDialog.open();
+      // },
+
+      // onCloseDialog : function () {
+      //    this.getView().byId("helloDialog").close();
+      // }
    });
 });

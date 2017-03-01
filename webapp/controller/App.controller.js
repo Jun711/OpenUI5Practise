@@ -3,6 +3,9 @@ sap.ui.define([
 ], function (Controller) {
    "use strict";
    return Controller.extend("sap.ui.demo.wt.controller.App", {
+	   	onOpenDialog : function () {
+				this.getOwnerComponent().openHelloDialog();
+			}
 	  //  	onInit : function () {
 			// // set data model on view
 			// var oData = {

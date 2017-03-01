@@ -1,7 +1,8 @@
 sap.ui.define([
    "sap/ui/core/UIComponent",
-   "sap/ui/model/json/JSONModel"
-], function (UIComponent, JSONModel) {
+   "sap/ui/model/json/JSONModel",
+   "sap/ui/demo/wt/controller/HelloDialog"
+], function (UIComponent, JSONModel, HelloDialog) {
    "use strict";
    return UIComponent.extend("sap.ui.demo.wt.Component", {
       metadata : {
@@ -24,6 +25,13 @@ sap.ui.define([
          //    bundleName : "sap.ui.demo.wt.i18n.i18n"
          // });
          // this.setModel(i18nModel, "i18n");
+      // set dialog
+         this._helloDialog = new HelloDialog(this.getAggregation("rootControl"));
+      },
+
+
+      openHelloDialog : function () {
+         this._helloDialog.open();
       }
    });
 });
